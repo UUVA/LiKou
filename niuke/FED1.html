@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 填写样式 */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            cursor: pointer;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+        li:hover {
+            background-color: #eaeaea;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+            <li>.</li>
+            <li>.</li>
+            <li>.</li>
+        </ul>
+    <!-- 填写标签 -->
+    <script type="text/javascript">
+        // 填写JavaScript
+        document.querySelector('ul').onclick = event => {
+            // 判断点击的目标是否是 li 元素
+            if (event.target.tagName === 'LI') {
+                // 获取当前 li 的文本内容
+                let currentText = event.target.textContent;
+                // 在文本内容后面拼接 "."
+                event.target.textContent = currentText + ".";
+            }
+   
+}
+    </script>
+</body>
+
+</html>
