@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        // 补全代码
+        function Human(name) {
+            this.name = name
+            this.kingdom = 'animal'
+            this.color = ['yellow', 'white', 'brown', 'black']
+        }
+
+
+        Human.prototype.getName = function () {
+            return this.name
+        }
+
+        function Chinese(name, age) {
+            Human.call(this, name);
+            this.age = age;
+            this.color = 'yellow'
+        }
+
+        // 寄生组合式继承的实现
+        function inheritPrototype(subType, superType) {
+            let prototype = Object.create(superType.prototype);//创建对象
+            prototype.constructor = subType;//增强对象
+            subType.prototype = prototype;//赋值对象
+        }
+
+        inheritPrototype(Chinese, Human);
+
+        // 添加 getAge 方法到 Chinese 的原型上
+        Chinese.prototype.getAge = function () {
+            return this.age;
+        }
+    </script>
+</body>
+
+</html>

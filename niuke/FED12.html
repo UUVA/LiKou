@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+</head>
+
+<body>
+
+    <script>
+        Function.prototype._bind = function (context, ...arg1) {
+            let _this = this;
+            return function (...arg2) {
+                return _this.call(context, ...arg1, ...arg2)
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 填写样式 */
+        /* 基本样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .call-container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .call-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .call-output {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background: #eee;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 填写标签 -->
+    <script type="text/javascript">
+        // 填写JavaScript
+        Function.prototype._call = function (context, ...args) {
+            if (typeof this !== 'function') {
+                throw new TypeError('Function.prototype._call called on a non-function');
+            }
+            context = context || window;
+            context.__fn__ = this;
+            const result = context.__fn__(...args);
+            delete context.__fn__;
+            return result;
+        };
+    </script>
+</body>
+
+</html>

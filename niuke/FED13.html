@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        const _new = function () {
+            // 补全代码
+            //创建一个新的对象
+            const obj1 = {};
+            //获取当前函数实参的第一个参数，即需要创建的对象类型
+            //arguments是类数组对象
+            let fn = [...arguments].shift();
+            //实例对象的隐式原型指向构造器的显式原型
+            obj1.__proto__ = fn.prototype;
+            //返回创建的实例对象
+            const obj2 = fn.apply(obj1, arguments);
+            return obj2 instanceof Object ? obj2 : obj1;
+        }
+
+
+    </script>
+</body>
+
+</html>
